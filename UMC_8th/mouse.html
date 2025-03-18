@@ -1,0 +1,29 @@
+<style>
+
+    /*원 스타일 설정*/
+    .circle {
+      width: 30px;
+      height: 30px;
+      background-color: rgb(252, 197, 207);
+      position: absolute; /*화면에서 위치를 자유롭게 변경할 수 있도록 설정*/
+      border-radius: 50%; /*원 모양으로 만들기 (둥글게)*/
+    }
+  </style>
+
+  <!--마우스를 따라다니는 원-->
+  <div class="circle" id="circle"></div>
+  
+  <script>
+    // id가 circle인 요소를 js에서 가져옴
+    // const : 변경할 수 없는 상수(constant) 변수를 만들 때 사용하는 변수 선언 키워드
+    const circle = document.getElementById("circle");
+  
+    // 문서 전체에 마우스 움직임 이벤트 추가
+    document.addEventListener("mousemove", function(event) {
+      
+      // 마우스 위치를 기준으로 원의 위치를 변경
+      circle.style.left = event.clientX + "px";  // 마우스 X 좌표에 원을 배치
+      circle.style.top = event.clientY + "px";   // 마우스 Y 좌표에 원을 배치
+    });
+  </script>
+  
